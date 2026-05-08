@@ -142,6 +142,22 @@ const SITES = [
       ja: "月5ドルの無料試用枠、以降は従量課金"
     }
   },
+  {
+    id: "vercel",
+    url: "https://vercel.com",
+    category: "cloud",
+    name: "Vercel",
+    desc: {
+      zh: "Next.js 团队出品的前端部署平台，git push 即上线，预览环境与生产无缝切换",
+      en: "Frontend deployment platform from the Next.js team — git push to deploy, instant preview envs",
+      ja: "Next.js チーム製のフロントエンド配信基盤。git push で即デプロイ、プレビュー環境も自動生成"
+    },
+    free: {
+      zh: "Hobby 计划：100 GB 流量 / 不限部署 / 自动 HTTPS / 边缘函数",
+      en: "Hobby: 100 GB bandwidth, unlimited deploys, auto HTTPS, edge functions",
+      ja: "Hobby プラン：100 GB 帯域 / デプロイ無制限 / 自動 HTTPS / エッジ関数"
+    }
+  },
 
   // —— 数据库 / 后端 ——
   {
