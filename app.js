@@ -196,35 +196,35 @@ const SITES = [
 
   // —— 家庭实验室 ——
   {
-    id: "pve_szpve",
-    url: "https://192.168.5.207:8006",
+    id: "pve_office_1",
+    url: "https://192.168.5.203:8006",
     category: "homelab",
-    name: "PVE · szpve",
+    name: "办公室 PVE1",
     desc: {
-      zh: "Proxmox VE 节点 szpve（192.168.5.207），家庭虚拟化主机",
-      en: "Proxmox VE node szpve (192.168.5.207) — home virtualization host",
-      ja: "Proxmox VE ノード szpve（192.168.5.207）。家庭用仮想化ホスト"
+      zh: "办公室 Proxmox VE 节点 skywooo（192.168.5.203）",
+      en: "Office Proxmox VE node skywooo (192.168.5.203)",
+      ja: "オフィス Proxmox VE ノード skywooo（192.168.5.203）"
     },
     free: {
-      zh: "本地部署 · 仅限局域网访问",
-      en: "Self-hosted · LAN only",
-      ja: "セルフホスト・LAN 内のみ"
+      zh: "本地部署 · 仅限办公室局域网访问",
+      en: "Self-hosted · office LAN only",
+      ja: "セルフホスト・オフィス LAN のみ"
     }
   },
   {
-    id: "pve_skywooo",
-    url: "https://192.168.5.203:8006",
+    id: "pve_office_2",
+    url: "https://192.168.5.207:8006",
     category: "homelab",
-    name: "PVE · skywooo",
+    name: "办公室 PVE2",
     desc: {
-      zh: "Proxmox VE 节点 skywooo（192.168.5.203），家庭虚拟化主机",
-      en: "Proxmox VE node skywooo (192.168.5.203) — home virtualization host",
-      ja: "Proxmox VE ノード skywooo（192.168.5.203）。家庭用仮想化ホスト"
+      zh: "办公室 Proxmox VE 节点 szpve（192.168.5.207）",
+      en: "Office Proxmox VE node szpve (192.168.5.207)",
+      ja: "オフィス Proxmox VE ノード szpve（192.168.5.207）"
     },
     free: {
-      zh: "本地部署 · 仅限局域网访问",
-      en: "Self-hosted · LAN only",
-      ja: "セルフホスト・LAN 内のみ"
+      zh: "本地部署 · 仅限办公室局域网访问",
+      en: "Self-hosted · office LAN only",
+      ja: "セルフホスト・オフィス LAN のみ"
     }
   },
   {
