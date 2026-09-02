@@ -48,14 +48,30 @@ const PRIVATE_SITES = [
     }
   },
   {
-    id: "truenas_office",
+    id: "truenas_office_1",
     url: "https://192.168.5.197",
     category: "homelab",
-    name: "办公室 TrueNAS",
+    name: "办公室 TrueNAS 1",
     desc: {
       zh: "办公室 TrueNAS SCALE 存储服务器（192.168.5.197）",
       en: "Office TrueNAS SCALE storage server (192.168.5.197)",
       ja: "オフィス TrueNAS SCALE ストレージサーバー（192.168.5.197）"
+    },
+    free: {
+      zh: "本地部署 · 仅限办公室局域网访问",
+      en: "Self-hosted · office LAN only",
+      ja: "セルフホスト・オフィス LAN のみ"
+    }
+  },
+  {
+    id: "truenas_office_2",
+    url: "https://192.168.5.59",
+    category: "homelab",
+    name: "办公室 TrueNAS 2",
+    desc: {
+      zh: "办公室 TrueNAS SCALE 存储服务器（192.168.5.59）",
+      en: "Office TrueNAS SCALE storage server (192.168.5.59)",
+      ja: "オフィス TrueNAS SCALE ストレージサーバー（192.168.5.59）"
     },
     free: {
       zh: "本地部署 · 仅限办公室局域网访问",
