@@ -19,7 +19,8 @@ const CATEGORIES = [
   { id: "ai_workflow",    icon: "🎨", name: { zh: "AI 工作流",      en: "AI Workflows",     ja: "AI ワークフロー" } },
   { id: "cloud",          icon: "☁️", name: { zh: "云与边缘",       en: "Cloud & Edge",     ja: "クラウド・エッジ" } },
   { id: "db",             icon: "🗄️", name: { zh: "数据库 / 后端",  en: "Database & BaaS",  ja: "データベース・BaaS" } },
-  { id: "learn",          icon: "📚", name: { zh: "学习资源",       en: "Resources",        ja: "学習リソース" } }
+  { id: "learn",          icon: "📚", name: { zh: "学习资源",       en: "Resources",        ja: "学習リソース" } },
+  { id: "homelab",        icon: "🖥️", name: { zh: "家庭实验室",     en: "Homelab",          ja: "ホームラボ" } }
 ];
 
 const SITES = [
@@ -190,6 +191,56 @@ const SITES = [
       zh: "Redis 10K 命令/天 / 256 MB；QStash 500 次/天",
       en: "Redis 10K cmds/day / 256 MB; QStash 500 msgs/day",
       ja: "Redis 10K コマンド/日 / 256 MB；QStash 500 件/日"
+    }
+  },
+
+  // —— 家庭实验室 ——
+  {
+    id: "pve_szpve",
+    url: "https://192.168.5.207:8006",
+    category: "homelab",
+    name: "PVE · szpve",
+    desc: {
+      zh: "Proxmox VE 节点 szpve（192.168.5.207），家庭虚拟化主机",
+      en: "Proxmox VE node szpve (192.168.5.207) — home virtualization host",
+      ja: "Proxmox VE ノード szpve（192.168.5.207）。家庭用仮想化ホスト"
+    },
+    free: {
+      zh: "本地部署 · 仅限局域网访问",
+      en: "Self-hosted · LAN only",
+      ja: "セルフホスト・LAN 内のみ"
+    }
+  },
+  {
+    id: "pve_skywooo",
+    url: "https://192.168.5.203:8006",
+    category: "homelab",
+    name: "PVE · skywooo",
+    desc: {
+      zh: "Proxmox VE 节点 skywooo（192.168.5.203），家庭虚拟化主机",
+      en: "Proxmox VE node skywooo (192.168.5.203) — home virtualization host",
+      ja: "Proxmox VE ノード skywooo（192.168.5.203）。家庭用仮想化ホスト"
+    },
+    free: {
+      zh: "本地部署 · 仅限局域网访问",
+      en: "Self-hosted · LAN only",
+      ja: "セルフホスト・LAN 内のみ"
+    }
+  },
+  {
+    id: "pve_home",
+    url: "https://192.168.2.217:8006",
+    category: "homelab",
+    name: "PVE · 家里",
+    desc: {
+      zh: "家里的 Proxmox VE 节点（192.168.2.217）",
+      en: "Home Proxmox VE node (192.168.2.217)",
+      ja: "自宅の Proxmox VE ノード（192.168.2.217）"
+    },
+    free: {
+      zh: "本地部署 · 仅限家庭网络访问",
+      en: "Self-hosted · home LAN only",
+      ja: "セルフホスト・自宅 LAN のみ"
     }
   },
 
