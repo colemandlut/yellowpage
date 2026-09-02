@@ -194,55 +194,7 @@ const SITES = [
     }
   },
 
-  // —— 家庭实验室 ——
-  {
-    id: "pve_office_1",
-    url: "https://192.168.5.203:8006",
-    category: "homelab",
-    name: "办公室 PVE1",
-    desc: {
-      zh: "办公室 Proxmox VE 节点 skywooo（192.168.5.203）",
-      en: "Office Proxmox VE node skywooo (192.168.5.203)",
-      ja: "オフィス Proxmox VE ノード skywooo（192.168.5.203）"
-    },
-    free: {
-      zh: "本地部署 · 仅限办公室局域网访问",
-      en: "Self-hosted · office LAN only",
-      ja: "セルフホスト・オフィス LAN のみ"
-    }
-  },
-  {
-    id: "pve_office_2",
-    url: "https://192.168.5.207:8006",
-    category: "homelab",
-    name: "办公室 PVE2",
-    desc: {
-      zh: "办公室 Proxmox VE 节点 szpve（192.168.5.207）",
-      en: "Office Proxmox VE node szpve (192.168.5.207)",
-      ja: "オフィス Proxmox VE ノード szpve（192.168.5.207）"
-    },
-    free: {
-      zh: "本地部署 · 仅限办公室局域网访问",
-      en: "Self-hosted · office LAN only",
-      ja: "セルフホスト・オフィス LAN のみ"
-    }
-  },
-  {
-    id: "pve_home",
-    url: "https://192.168.2.217:8006",
-    category: "homelab",
-    name: "PVE · 家里",
-    desc: {
-      zh: "家里的 Proxmox VE 节点（192.168.2.217）",
-      en: "Home Proxmox VE node (192.168.2.217)",
-      ja: "自宅の Proxmox VE ノード（192.168.2.217）"
-    },
-    free: {
-      zh: "本地部署 · 仅限家庭网络访问",
-      en: "Self-hosted · home LAN only",
-      ja: "セルフホスト・自宅 LAN のみ"
-    }
-  },
+  // —— 家庭实验室（内网站点由 /api/private-sites 按访问者公网 IP 动态注入） ——
 
   // —— 学习资源 ——
   {
@@ -484,6 +436,21 @@ function setQuery(q) {
   renderGrid();
 }
 
+// ---------- private sites (LAN-only, gated by visitor IP via /api/private-sites) ----------
+async function loadPrivateSites() {
+  try {
+    const res = await fetch("/api/private-sites", { cache: "no-store" });
+    if (!res.ok) return;
+    const extra = await res.json();
+    if (!Array.isArray(extra) || extra.length === 0) return;
+    const existing = new Set(SITES.map(s => s.id));
+    for (const s of extra) if (!existing.has(s.id)) SITES.push(s);
+    renderGrid();
+  } catch {
+    // API absent (e.g. local file://) or blocked — silently keep public sites only
+  }
+}
+
 // ---------- init ----------
 function init() {
   document.documentElement.dataset.theme = theme;
@@ -497,6 +464,7 @@ function init() {
   document.getElementById("theme-toggle").addEventListener("click", () => setTheme(theme === "dark" ? "light" : "dark"));
 
   loadAdSense();
+  loadPrivateSites();
 }
 
 if (document.readyState === "loading") {
